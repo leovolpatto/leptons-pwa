@@ -1,0 +1,13 @@
+{
+  "name": "Leptons",
+  "short_name": "Leptons",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "icons": [{
+    "src": "assets/imgs/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}
