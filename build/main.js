@@ -172,7 +172,7 @@ var LampsPage = /** @class */ (function (_super) {
                 l.device_Data = device;
                 l.device_id = device.id;
                 l.on = false;
-                l.canBeActivated = (i == 5 || i == 16);
+                l.canBeActivated = (i == 5 || i == 16 || i == 13);
                 l.pin = i;
                 dLamp.lamps.push(l);
             }
