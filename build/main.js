@@ -1,12 +1,12 @@
-webpackJsonp([4],{
+webpackJsonp([5],{
 
-/***/ 103:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfigsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_configs_configs__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -32,7 +32,7 @@ var ConfigsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-configs',template:/*ion-inline-start:"/home/leovolpatto/Desktop/Leptons/src/pages/configs/configs.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Configurações</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item>\n      <ion-label floating>API URL</ion-label>\n      <ion-input type="text" [(ngModel)]="configs.apiEndpoint"></ion-input>\n    </ion-item>  \n\n    <p>\n      <span>http://api.leptons.com:84/api/</span>\n    </p>\n    \n    <p>\n        <span>http://18.228.157.163:84/api/</span>\n    </p>\n\n</ion-content>\n'/*ion-inline-end:"/home/leovolpatto/Desktop/Leptons/src/pages/configs/configs.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_configs_configs__["a" /* ConfigsProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_configs_configs__["a" /* ConfigsProvider */]])
     ], ConfigsPage);
     return ConfigsPage;
 }());
@@ -41,17 +41,80 @@ var ConfigsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 104:
+/***/ 105:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceConfigPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PageBase__ = __webpack_require__(81);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DeviceConfigPage = /** @class */ (function (_super) {
+    __extends(DeviceConfigPage, _super);
+    function DeviceConfigPage(navCtrl, navParams, loadingCtrl, viewCtrl) {
+        var _this = _super.call(this, loadingCtrl) || this;
+        _this.navCtrl = navCtrl;
+        _this.navParams = navParams;
+        _this.loadingCtrl = loadingCtrl;
+        _this.viewCtrl = viewCtrl;
+        _this.device = navParams.data.device;
+        console.log(_this.device);
+        return _this;
+    }
+    DeviceConfigPage.prototype.ionViewDidLoad = function () {
+    };
+    DeviceConfigPage.prototype.closeModal = function () {
+        this.viewCtrl.dismiss();
+    };
+    DeviceConfigPage.prototype.save = function () {
+        this.viewCtrl.dismiss();
+    };
+    DeviceConfigPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-device-config',template:/*ion-inline-start:"/home/leovolpatto/Desktop/Leptons/src/pages/device-config/device-config.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      {{device.name}}\n    </ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="closeModal()">\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close" showWhen="android"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item>\n      <ion-label floating>Nome</ion-label>\n      <ion-input type="text" [(ngModel)]="device.name"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Descrição</ion-label>\n      <ion-input type="text" [(ngModel)]="device.description"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12>\n        <div class="fixed-button">\n          <button ion-button full color="secondary" (click)="save()" >Salvar</button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/home/leovolpatto/Desktop/Leptons/src/pages/device-config/device-config.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+    ], DeviceConfigPage);
+    return DeviceConfigPage;
+}(__WEBPACK_IMPORTED_MODULE_2__PageBase__["a" /* PageBase */]));
+
+//# sourceMappingURL=device-config.js.map
+
+/***/ }),
+
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LampsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PageBase__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__devices_devices__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_LampCommand__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_lamps_lamps__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__PageBase__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_LampCommand__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_lamps_lamps__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(28);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -164,10 +227,8 @@ var LampsPage = /** @class */ (function (_super) {
         this.devices.filter(function (d) { return d.active; }).forEach(function (device) {
             var dLamp = new DeviceLamps();
             dLamp.device = device;
-            for (var i = 2; i < 17; i++) {
-                if (i == 7 || i == 8 || i == 9 || i == 10 || i == 11 || i == 14 || i == 15) {
-                    continue;
-                }
+            var lamps = [5, 13, 16];
+            lamps.forEach(function (i) {
                 var l = new Lamp();
                 l.device_Data = device;
                 l.device_id = device.id;
@@ -175,19 +236,19 @@ var LampsPage = /** @class */ (function (_super) {
                 l.canBeActivated = (i == 5 || i == 16 || i == 13);
                 l.pin = i;
                 dLamp.lamps.push(l);
-            }
+            });
             _this.deviceLamps.push(dLamp);
         });
     };
     LampsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
             selector: 'page-lamps',template:/*ion-inline-start:"/home/leovolpatto/Desktop/Leptons/src/pages/lamps/lamps.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Luminárias</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card *ngFor="let item of deviceLamps">\n    <ion-item>\n      <h2>{{item.device.name}}</h2>\n      <p>{{item.device.description}}</p>\n    </ion-item>\n\n    <ion-card-content>\n      <ion-row>\n        <ion-col *ngFor="let lamp of item.lamps" class="lamp">\n            <button ion-button clear (click)="invert(lamp);">\n                <ion-icon name="bulb" [ngClass]="{\'lampOn\': lamp.on}" class="lampOn"></ion-icon>\n                <span class="lamp-number">{{lamp.pin}}</span>\n            </button>\n        </ion-col>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n\n\n</ion-content>'/*ion-inline-end:"/home/leovolpatto/Desktop/Leptons/src/pages/lamps/lamps.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_lamps_lamps__["a" /* LampsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* Events */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_lamps_lamps__["a" /* LampsProvider */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["f" /* LoadingController */]])
     ], LampsPage);
     return LampsPage;
-}(__WEBPACK_IMPORTED_MODULE_5__PageBase__["a" /* PageBase */]));
+}(__WEBPACK_IMPORTED_MODULE_0__PageBase__["a" /* PageBase */]));
 
 var Lamp = /** @class */ (function () {
     function Lamp() {
@@ -205,7 +266,7 @@ var DeviceLamps = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 115:
+/***/ 117:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -218,28 +279,32 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 115;
+webpackEmptyAsyncContext.id = 117;
 
 /***/ }),
 
-/***/ 157:
+/***/ 159:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/configs/configs.module": [
-		286,
+		287,
+		4
+	],
+	"../pages/device-config/device-config.module": [
+		288,
 		3
 	],
 	"../pages/devices/devices.module": [
-		287,
+		289,
 		2
 	],
 	"../pages/lamps/lamps.module": [
-		288,
+		290,
 		1
 	],
 	"../pages/login/login.module": [
-		289,
+		291,
 		0
 	]
 };
@@ -254,19 +319,19 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 157;
+webpackAsyncContext.id = 159;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 160:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DevicesProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__configs_configs__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__configs_configs__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -285,22 +350,22 @@ var DevicesProvider = /** @class */ (function () {
         this.configs = configs;
     }
     DevicesProvider.prototype.getDevices = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]({});
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({});
         var url = this.configs.apiEndpoint + "devices";
         return this.http.get(url, {
             headers: headers
         }).toPromise();
     };
     DevicesProvider.prototype.updateDevice = function (device) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]({});
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({});
         var url = this.configs.apiEndpoint + "devices/" + device.id;
         return this.http.put(url, device, {
             headers: headers
         }).toPromise();
     };
     DevicesProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__configs_configs__["a" /* ConfigsProvider */]])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1__configs_configs__["a" /* ConfigsProvider */]])
     ], DevicesProvider);
     return DevicesProvider;
 }());
@@ -309,47 +374,7 @@ var DevicesProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 161:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageBase; });
-var PageBase = /** @class */ (function () {
-    function PageBase(loadingCtrl) {
-        this.loadingCtrl = loadingCtrl;
-        this.isPageLoading = false;
-    }
-    PageBase.prototype.setPageLoading = function (loading, content) {
-        this.isPageLoading = loading;
-        if (this.loadingCtrl == null) {
-            console.error("LoadingController not injected in derived class. Loading will not be shown");
-            return;
-        }
-        if (this.pageLoadingCtrl == null) {
-            this.pageLoadingCtrl = this.loadingCtrl.create({
-                content: content == null ? 'Aguarde...' : content
-            });
-        }
-        try {
-            if (this.isPageLoading) {
-                this.pageLoadingCtrl.present();
-            }
-            else {
-                this.pageLoadingCtrl.dismiss();
-                this.pageLoadingCtrl = null;
-            }
-        }
-        catch (e) {
-        }
-    };
-    return PageBase;
-}());
-
-//# sourceMappingURL=PageBase.js.map
-
-/***/ }),
-
-/***/ 162:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -447,15 +472,15 @@ var LampsProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lamps_lamps__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lamps_lamps__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__devices_devices__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__configs_configs__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__configs_configs__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -487,13 +512,13 @@ var TabsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 207:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -501,33 +526,35 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_action_action__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_action_action__ = __webpack_require__(286);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common_http__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_devices_devices__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_lamps_lamps__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_configs_configs__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_devices_devices__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_lamps_lamps__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_configs_configs__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_devices_devices__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_configs_configs__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_lamps_lamps__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_lamps_lamps__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_device_config_device_config__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -554,13 +581,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__pages_devices_devices__["a" /* DevicesPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_lamps_lamps__["a" /* LampsPage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_configs_configs__["a" /* ConfigsPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */]
+                __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_device_config_device_config__["a" /* DeviceConfigPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/configs/configs.module#ConfigsPageModule', name: 'ConfigsPage', segment: 'configs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/device-config/device-config.module#DeviceConfigPageModule', name: 'DeviceConfigPage', segment: 'device-config', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/devices/devices.module#DevicesPageModule', name: 'DevicesPage', segment: 'devices', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/lamps/lamps.module#LampsPageModule', name: 'LampsPage', segment: 'lamps', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
@@ -575,7 +604,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__pages_devices_devices__["a" /* DevicesPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_lamps_lamps__["a" /* LampsPage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_configs_configs__["a" /* ConfigsPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */]
+                __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_device_config_device_config__["a" /* DeviceConfigPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_9__angular_common_http__["a" /* HttpClient */],
@@ -596,7 +626,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -611,16 +641,16 @@ var LampCommand = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 277:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -648,7 +678,7 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/leovolpatto/Desktop/Leptons/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/leovolpatto/Desktop/Leptons/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -657,7 +687,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 285:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -721,7 +751,7 @@ var ActionProvider = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfigsProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_storage__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_storage__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -772,11 +802,12 @@ var ConfigsProvider = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DevicesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_devices_devices__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PageBase__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_configs_configs__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PageBase__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_devices_devices__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_configs_configs__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__device_config_device_config__ = __webpack_require__(105);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -801,9 +832,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DevicesPage = /** @class */ (function (_super) {
     __extends(DevicesPage, _super);
-    function DevicesPage(navCtrl, navParams, devicesProvider, loadingCtrl, events, configs) {
+    function DevicesPage(navCtrl, navParams, devicesProvider, loadingCtrl, events, configs, modalCtrl) {
         var _this = _super.call(this, loadingCtrl) || this;
         _this.navCtrl = navCtrl;
         _this.navParams = navParams;
@@ -811,6 +843,7 @@ var DevicesPage = /** @class */ (function (_super) {
         _this.loadingCtrl = loadingCtrl;
         _this.events = events;
         _this.configs = configs;
+        _this.modalCtrl = modalCtrl;
         return _this;
     }
     DevicesPage_1 = DevicesPage;
@@ -835,22 +868,66 @@ var DevicesPage = /** @class */ (function (_super) {
     DevicesPage.prototype.activateDevice = function (device) {
         this.loadDevices();
     };
+    DevicesPage.prototype.editDevice = function (device) {
+        var mod = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_5__device_config_device_config__["a" /* DeviceConfigPage */], { "device": device });
+        mod.present();
+    };
     DevicesPage.firstLoadedDevices = [];
     DevicesPage = DevicesPage_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-devices',template:/*ion-inline-start:"/home/leovolpatto/Desktop/Leptons/src/pages/devices/devices.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Dispositivos</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list no-border>\n    <ion-list-header>\n      Habilitados\n    </ion-list-header>\n\n    <ion-item *ngFor="let item of activeDeviceList">\n      <button ion-button icon-only clear item-end>\n        <ion-icon name="build"></ion-icon>\n      </button>\n      <ion-toggle checked="{{item.active}}" (click)="inactivateDevice(item);"></ion-toggle>\n      <ion-label>\n        {{item.name}}\n      </ion-label>\n      <ion-icon name=\'git-compare\' item-start></ion-icon>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>\n      Não Habilitados\n    </ion-list-header>\n\n    <ion-item *ngFor="let item of inactiveDeviceList">\n      <!--<ion-note item-end>\n        To the moon\n      </ion-note>-->      \n      <button ion-button icon-only clear item-end>\n        <ion-icon name="build"></ion-icon>\n      </button>\n      <ion-toggle checked="{{item.active}}"  (click)="activateDevice(item);"></ion-toggle>\n      <ion-label>\n        {{item.name}}\n      </ion-label>\n      <ion-icon name=\'git-compare\' item-start></ion-icon>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/leovolpatto/Desktop/Leptons/src/pages/devices/devices.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
+            selector: 'page-devices',template:/*ion-inline-start:"/home/leovolpatto/Desktop/Leptons/src/pages/devices/devices.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Dispositivos</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list no-border>\n    <ion-list-header>\n      Habilitados\n    </ion-list-header>\n\n    <ion-item *ngFor="let item of activeDeviceList">\n      <button ion-button icon-only clear item-end (click)="editDevice(item);">\n        <ion-icon name="build"></ion-icon>\n      </button>\n      <ion-toggle checked="{{item.active}}" (click)="inactivateDevice(item);"></ion-toggle>\n      <ion-label>\n        {{item.name}}\n      </ion-label>\n      <ion-icon name=\'git-compare\' item-start></ion-icon>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>\n      Não Habilitados\n    </ion-list-header>\n\n    <ion-item *ngFor="let item of inactiveDeviceList">\n      <!--<ion-note item-end>\n        To the moon\n      </ion-note>-->      \n      <button ion-button icon-only clear item-end>\n        <ion-icon name="build"></ion-icon>\n      </button>\n      <ion-toggle checked="{{item.active}}" (click)="activateDevice(item);"></ion-toggle>\n      <ion-label>\n        {{item.name}}\n      </ion-label>\n      <ion-icon name=\'git-compare\' item-start></ion-icon>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/leovolpatto/Desktop/Leptons/src/pages/devices/devices.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_devices_devices__["a" /* DevicesProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_4__providers_configs_configs__["a" /* ConfigsProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_devices_devices__["a" /* DevicesProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_3__providers_configs_configs__["a" /* ConfigsProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* ModalController */]])
     ], DevicesPage);
     return DevicesPage;
     var DevicesPage_1;
-}(__WEBPACK_IMPORTED_MODULE_3__PageBase__["a" /* PageBase */]));
+}(__WEBPACK_IMPORTED_MODULE_0__PageBase__["a" /* PageBase */]));
 
 //# sourceMappingURL=devices.js.map
 
+/***/ }),
+
+/***/ 81:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageBase; });
+var PageBase = /** @class */ (function () {
+    function PageBase(loadingCtrl) {
+        this.loadingCtrl = loadingCtrl;
+        this.isPageLoading = false;
+    }
+    PageBase.prototype.setPageLoading = function (loading, content) {
+        this.isPageLoading = loading;
+        if (this.loadingCtrl == null) {
+            console.error("LoadingController not injected in derived class. Loading will not be shown");
+            return;
+        }
+        if (this.pageLoadingCtrl == null) {
+            this.pageLoadingCtrl = this.loadingCtrl.create({
+                content: content == null ? 'Aguarde...' : content
+            });
+        }
+        try {
+            if (this.isPageLoading) {
+                this.pageLoadingCtrl.present();
+            }
+            else {
+                this.pageLoadingCtrl.dismiss();
+                this.pageLoadingCtrl = null;
+            }
+        }
+        catch (e) {
+        }
+    };
+    return PageBase;
+}());
+
+//# sourceMappingURL=PageBase.js.map
+
 /***/ })
 
-},[207]);
+},[208]);
 //# sourceMappingURL=main.js.map
